@@ -5,7 +5,7 @@
 	<Color name="Foreground" foreground="#B8B8B8" />
 	<Color name="Punctuation" foreground="#727272" />
 	<Color name="MethodCall" foreground="#7EA8CB"/>
-	<Color name="Literals" foreground="#948AE3"/>
+	<Color name="Literals" foreground="#7EA8CB"/>
 	<Color name="Keywords" fontWeight="bold" foreground="#977C83" />
 	<Color name="Escapes" foreground="#948AE3" />
 
