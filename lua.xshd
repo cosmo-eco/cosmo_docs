@@ -3,7 +3,7 @@
 	<Color name="Comment" foreground="#434C58" />
 	<Color name="String" foreground="#fce566" />
 	<Color name="Foreground" foreground="#B8B8B8" />
-	<Color name="Punctuation" foreground="#fc618d" />
+	<Color name="Punctuation" foreground="#727272" />
 	<Color name="MethodCall" foreground="#7EA8CB"/>
 	<Color name="Literals" foreground="#948ae3"/>
 	<Color name="Keywords" fontWeight="bold" foreground="#977C83" />
