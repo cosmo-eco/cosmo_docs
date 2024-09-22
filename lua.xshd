@@ -1,44 +1,39 @@
 <?xml version="1.0"?>
 <SyntaxDefinition name="Lua" extensions=".lua" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
-	<Color name="Comment" foreground="#434C58" /> <!-- Dark gray for comments -->
-	<Color name="String" foreground="#FCE566" /> <!-- Light yellow for strings -->
-	<Color name="Foreground" foreground="#B8B8B8" /> <!-- General foreground text in light gray -->
-	<Color name="Punctuation" foreground="#727272" /> <!-- Slightly darker gray for punctuation -->
-	<Color name="MethodCall" foreground="#7EA8CB"/> <!-- Light blue for methods -->
-	<Color name="Literals" foreground="#948AE3"/> <!-- Purple for literals -->
-	<Color name="Keywords" fontWeight="bold" foreground="#977C83" /> <!-- Pinkish for keywords -->
-	<Color name="Escapes" foreground="#948AE3" /> <!-- Same as literals for escape sequences -->
+	<Color name="Comment" foreground="#434C58" />
+	<Color name="String" foreground="#FCE566" />
+	<Color name="Foreground" foreground="#B8B8B8" />
+	<Color name="Punctuation" foreground="#727272" />
+	<Color name="MethodCall" foreground="#7EA8CB"/>
+	<Color name="Literals" foreground="#948AE3"/>
+	<Color name="Keywords" fontWeight="bold" foreground="#977C83" />
+	<Color name="Escapes" foreground="#948AE3" />
 
 	<RuleSet>
-		<!-- Method calls (functions) -->
 		<Rule color="MethodCall">
 			\b
-			[\d\w_]+	# an identifier
-			(?=\s*\() 	# followed by (
+			[\d\w_]+	
+			(?=\s*\() 
 		</Rule>
 		<Rule color="MethodCall">
 			\b
-			[\d\w_]+	# an identifier
-			(?=\s*\{) 	# followed by {
+			[\d\w_]+	
+			(?=\s*\{)
 		</Rule>
 
-		<!-- Punctuation -->
 		<Rule color="Punctuation">
-			[\)\(*&^%$#@!\\\]\[;':",./<>?\{\}\|\-\=\+]+
+			[\)\(*&amp;^%$#@!\\\]\[;':",./&lt;&gt;?\{\}\|\-\=\+]+
 		</Rule>
 
-		<!-- Multiline Comments -->
 		<Span color="Comment" multiline="true">
 			<Begin>--\[[=]*\[</Begin>
 			<End>\][=]*\]</End>
 		</Span>
 
-		<!-- Single line comments -->
 		<Span color="Comment">
 			<Begin>--</Begin>
 		</Span>
 
-		<!-- Strings -->
 		<Span color="String">
 			<Begin color="Foreground">"</Begin>
 			<End color="Foreground">"</End>
@@ -60,14 +55,12 @@
 			<End color="Foreground">\][=]*]</End>
 		</Span>
 
-		<!-- Literals -->
 		<Keywords color="Literals">
 			<Word>true</Word>
 			<Word>false</Word>
 			<Word>nil</Word>
 		</Keywords>
 
-		<!-- Keywords -->
 		<Keywords color="Keywords">
 			<Word>and</Word>
 			<Word>break</Word>
@@ -92,14 +85,13 @@
 			<Word>while</Word>
 		</Keywords>
 
-		<!-- Numbers -->
 		<Rule color="Literals">
-			\b0[xX][0-9a-fA-F]+	# hex number
+			\b0[xX][0-9a-fA-F]+	
 			|
-			(	\b\d+(\.[0-9]+)?	 #number with optional floating point
-			|	\.[0-9]+			 #or just starting with floating point
+			(	\b\d+(\.[0-9]+)?	 
+			|	\.[0-9]+			 
 			)
-			([eE][+-]?[0-9]+)? # optional exponent
+			([eE][+-]?[0-9]+)? 
 		</Rule>
 	</RuleSet>
 </SyntaxDefinition>
